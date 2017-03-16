@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css"
+          href="http://fonts.googleapis.com/css?family=Roboto Mono">
+
+    <link rel="stylesheet" type="text/css" href='/home/raghu/web/Result-analysis/app/view/style/login.css' >
+    <script src="/home/raghu/web/Result-analysis/app/view/script/loginscript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <style>
+
+    </style>
+
+    <script>
+    // Get the element with id="defaultOpen" and click on it
+
+    $(document).ready(function () {
+    setTimeout(function(){
+        $('#delay').fadeIn(1000);
+    }, 5000);
+});
+
+
+
+
+    jQuery(function(){
+       jQuery('#open').click();
+    });
+
+    setInterval(function() {
+       $('#test').effect('bounce',1000)
+   },0);
+
+    </script>
+  </head>
+  <body>
+
+<!--playing backgrounf video-->
+    <div class="fullscreen-bg">
+    <video  muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+        <source src="/home/raghu/Downloads/wt3.webm" type="video/webm">
+        <source src="/home/raghu/Downloads/wt3.mp4" type="video/mp4">
+        <source src="/home/raghu/Downloads/wt3.ogv" type="video/ogg">
+    </video>
+</div>
+
+    <!--show after a delay-->
+    <div id="delay" style="display:none">
+
+        <!-- back groufn blur -->
+       <div id="foreground"></div>
+
+
+
+       <div id="test" class="enjoy-css" style="width:50%;">SJCE Results</div>
+       <link async href="http://fonts.googleapis.com/css?family=Aldrich"
+       rel="stylesheet" type="text/css"/>
+
+
+
+    <!-- login card --->
+        <div id="card" style="position: relative;display:inline-block;">
+
+            <!--login header -->
+                <div class="cardtop">
+                    <button class="tablinks" onclick="openCity(event, 'login')" id="open">Login</button>
+
+
+                    <button class="tablinks" onclick="openCity(event, 'register')">Register</button>
+                    <button class="tablinks" onclick="openCity(event, 'admin')">Admin</button>
+                </div>
+
+
+                <!--  Login tab-->
+                <div id="login" class="tabcontent">
+                    <!--Username input field-->
+                    <div class="group" style="width:100%;display:inline-block;margin-top:100px;">
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Username</label>
+                    </div>
+
+                    <!--password input field-->
+                    <div class="group" style="width:100%;display:inline-block;margin-top:5px;">
+                        <input type="password" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>
+                    </div>
+
+
+                    <!--login button-->
+                     <input id="login1" class="btn" type="submit" value="submit">
+                      <input id="login1" class="btn" type="reset" value="reset">
+                </div>
+
+                <div id="register" class="tabcontent">
+                    <div class="group" style="width:100%;display:inline-block;margin-top:100px;">
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Username</label>
+                    </div>
+
+                    <!--password input field-->
+                    <div class="group" style="width:100%;display:inline-block;margin-top:5px;">
+                        <input type="password" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>
+                    </div>
+
+
+                    <!--login button-->
+                     <input id="login1" class="btn" type="submit" value="submit1">
+                      <input id="login1" class="btn" type="reset" value="reset1">
+                </div>
+
+                <div id="admin" class="tabcontent">
+                    <div class="group" style="width:100%;display:inline-block;margin-top:100px;">
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Username</label>
+                    </div>
+
+                    <!--password input field-->
+                    <div class="group" style="width:100%;display:inline-block;margin-top:5px;">
+                        <input type="password" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>
+                    </div>
+
+
+                    <!--login button-->
+                     <input id="login1" class="btn" type="submit" value="submit2">
+                      <input id="login1" class="btn" type="reset" value="reset2">
+                </div>
+
+
+
+
+
+
+                <!--card footer -->
+
+                <!--
+                <div style="position:absolute;bottom:0;background-color:black;height:8%;width:100%;color:white;text-align:centre">
+                    <div style="margin-left:45%;margin-top:5px;"><b></b></div>
+
+                </div>-->
+            </div>
+        </div>
+
+
+
+
+  </body>
+</html>
