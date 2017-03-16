@@ -1,0 +1,261 @@
+body {
+  font-family: 'Roboto Mono', serif;
+  font-size: 48px;
+  text-shadow: 4px 4px 4px #aaa;
+}
+/* for back ground image with blur --*/
+#foreground{
+    position: fixed;
+    display: block;
+    width:110%;
+    height:110%;
+    background-color:grey;
+    color:red;
+    filter:blur(8px);
+    opacity: 0.7;
+    z-index:-1;
+    background-image: url('../../../resource/ma.jpg');
+    background-size: cover;
+
+}
+
+/* login buuton inside login card */
+.btn{
+    background-color: blue;
+    position: relative;;
+    display: inline-block;;
+    width:45%;
+    height:10%;
+    font-size: 20px;
+    bottom:25%;
+    border-width: 0;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 1px 1px 15px 4px rgba(0, 0, 0, 0.4);
+    background-color: #2ecc71;
+    color: #ecf0f1;
+    transition: background-color .3s;
+}
+
+
+.btn:hover{
+    transform: translateY(-5px);
+    box-shadow: 1px 1px 15px 4px rgba(0, 0, 0, 0.4);
+    size:50px;
+
+    }
+.btn:active{
+    transition: background-color .001s;
+    background-color: #219150;
+    }
+
+
+/*login card  */
+#card{
+     margin-left: 65%;
+     position: fixed;
+     margin-top: 6%;
+     box-shadow:0px 1px 20px 4px grey;
+     position: relative;
+     width: 25%;
+     height:60%;
+     border-radius: 15px;
+     background:#cccccc;
+
+     opacity: 0.8;
+ }
+
+/*  login header */
+ .cardtop{
+     position:absolute;
+     border:2px solid #595959;
+     height:15%;
+     width:99%;
+     color:black;
+     text-align:center;
+     border-radius: 8px;
+     opacity: 1;
+     background-color: white;
+    overflow: hidden;
+
+    background-color: #f1f1f1;
+ }
+
+/* input textfield label */
+ label          {
+   color:#999;
+   font-size:18px;
+   font-weight:normal;
+   position:absolute;
+   pointer-events:none;
+   left:5px;
+   top:10px;
+   transition:0.2s ;
+ }
+
+
+ input:focus ~ label    {
+   top:-20px;
+   font-size:14px;
+   color:#5264AE;
+ }
+ .group{
+     position:relative;
+     margin-bottom:45px;
+     transition: background-color .3s;
+ }
+ input{
+     font-size:18px;
+     padding:10px 10px 10px 5px;
+     display:block;
+     width:100%;
+     border:none;
+     border-bottom:1px solid #757575;
+     outline:none;
+
+ }
+ input:focus ~ label, input:valid ~ label        {
+top:-20px;
+font-size:14px;
+color:#5264AE;
+}
+
+ .group:hover{
+     transform: translateY(-5px);
+     box-shadow: 1px 1px 15px 4px rgba(0, 0, 0, 0.4);
+ }
+
+ .bar  { position:relative; display:block; width:100%; }
+
+ /* before bar size will be 0 */
+ .bar:before   {
+     content:'';
+     height:2px;
+     width:0;
+     bottom:1px;
+     position:absolute;
+     background:#5264AE;
+     transition:0.2s;
+ }
+
+/* making widht of bar 100% after it is selectes  */
+ input:focus ~ .bar:before {
+     width:100%;
+ }
+
+
+/* Style the buttons inside the tab */
+div.cardtop button {
+    background-color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 3px;
+    height:100%;
+    width:32%;
+    opacity: 0.9;
+    transition: 0.3s;
+    font-family: 'Roboto Mono', serif;
+    font-size: 20px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+/* Change background color of buttons on hover */
+div.cardtop button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.cardtop button.active{
+    background-color: #ccc;
+    color:white;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tabcontent {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* backgrpunf video play for small time*/
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+
+
+
+/* text styling */
+
+     .enjoy-css {
+         margin-top: 30%;
+         margin-left: 10%;
+        position: absolute;
+ -webkit-box-sizing: content-box;
+ -moz-box-sizing: content-box;
+ box-sizing: content-box;
+ border: none;
+ font: normal normal 900 70px/normal "Aldrich", Helvetica, sans-serif;
+ color: rgb(32, 44, 45);
+ text-align: center;
+ -o-text-overflow: clip;
+ text-overflow: clip;
+ text-shadow: 0 1px 0 rgb(128,141,147) , -1px 0 0 rgb(205,210,213) , -1px 2px 0 rgb(128,141,147) , -2px 1px 0 rgb(205,210,213) , -2px 3px 0 rgb(128,141,147) , -3px 2px 0 rgb(205,210,213) , -3px 4px 0 rgb(128,141,147) , -4px 3px 0 rgb(205,210,213) , -4px 5px 0 rgb(128,141,147) , -5px 4px 0 rgb(205,210,213) , -5px 6px 0 rgb(128,141,147) , -6px 5px 0 rgb(205,210,213) , -6px 7px 0 rgb(128,141,147) , -7px 6px 0 rgb(205,210,213) , -7px 8px 0 rgb(128,141,147) , -8px 7px 0 rgb(205,210,213) ;
+}
