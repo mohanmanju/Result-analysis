@@ -1,10 +1,11 @@
 <html>
   <head>
+      <title>Index</title>
     <link rel="stylesheet" type="text/css"
           href="http://fonts.googleapis.com/css?family=Roboto Mono">
 
-    <link rel="stylesheet" type="text/css" href='/home/raghu/web/Result-analysis/app/view/style/login.css' >
-    <script src="/home/raghu/web/Result-analysis/app/view/script/loginscript.js"></script>
+    <link rel="stylesheet" type="text/css" href='style/login.css' >
+    <script src="script/loginscript.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
     <style>
@@ -31,16 +32,62 @@
        $('#test').effect('bounce',1000)
    },0);
 
+
+
+   
+        $(document).ready(function(){
+             $("#login123").click(function(){
+        
+        var usr=$("#usr").val();
+        var pwd=$("#pwd").val();
+        alert(usr);
+        alert(pwd);
+         $.ajax({
+            url:'check.jsp',
+            data:{uname:usr,pass:pwd},
+            type:'post',
+            cache:false,
+            success:function(data){
+               
+               if(data != 'ERROR') // Message Sent, check and redirect
+                {
+                    $(location).attr('href','main1.html');
+                }  
+                else
+                {
+                    alert("error123");
+                    return false;
+                }
+            },
+            error:function(){
+              alert('error');
+            }
+         }
+    );
+}
+);
+        });
+
+function changebackground()
+{var d=new Date();
+ var n= d.getHours();
+//document.write("valuue of n ",n);
+if(n>12){
+    document.body.style.backgroundImage = "url('style/resource/ma.jpg')";
+        }
+        else
+            document.body.style.backgroundImage = "url('style/resource/new.jpg')";
+        }
     </script>
   </head>
-  <body>
+  <body onload="changebackground()">
 
 <!--playing backgrounf video-->
     <div class="fullscreen-bg">
     <video  muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
-        <source src="/home/raghu/Downloads/wt3.webm" type="video/webm">
-        <source src="/home/raghu/Downloads/wt3.mp4" type="video/mp4">
-        <source src="/home/raghu/Downloads/wt3.ogv" type="video/ogg">
+        <source src="style/resource/a.webm" type="video/webm">
+        <source src="style/resource/a.mp4" type="video/mp4">
+        <source src="style/resource/a.ogv" type="video/ogg">
     </video>
 </div>
 
@@ -51,8 +98,9 @@
        <div id="foreground"></div>
 
 
-
        <div id="test" class="enjoy-css" style="width:50%;">SJCE Results</div>
+       
+       
        <link async href="http://fonts.googleapis.com/css?family=Aldrich"
        rel="stylesheet" type="text/css"/>
 
@@ -63,19 +111,21 @@
 
             <!--login header -->
                 <div class="cardtop">
-                    <button class="tablinks" onclick="openCity(event, 'login')" id="open">Login</button>
+                    <button class="tablinks" onclick="openCity(event, 'login')" id="open">Guest</button>
 
 
-                    <button class="tablinks" onclick="openCity(event, 'register')">Register</button>
+                    
                     <button class="tablinks" onclick="openCity(event, 'admin')">Admin</button>
                 </div>
 
 
                 <!--  Login tab-->
                 <div id="login" class="tabcontent">
+                    <form  action="" method="post" id="">
+                        <input type='hidden' value='index' name='identify'>
                     <!--Username input field-->
                     <div class="group" style="width:100%;display:inline-block;margin-top:100px;">
-                        <input type="text" required>
+                        <input type="text" required name="username" id="usr">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>Username</label>
@@ -83,7 +133,7 @@
 
                     <!--password input field-->
                     <div class="group" style="width:100%;display:inline-block;margin-top:5px;">
-                        <input type="password" required>
+                        <input type="password" required id="pwd">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>Password</label>
@@ -91,10 +141,12 @@
 
 
                     <!--login button-->
-                     <input id="login1" class="btn" type="submit" value="submit">
+                     <input id="login123" class="btn" type="submit" value="submit">
                       <input id="login1" class="btn" type="reset" value="reset">
+                      </form>
                 </div>
 
+                <!--
                 <div id="register" class="tabcontent">
                     <div class="group" style="width:100%;display:inline-block;margin-top:100px;">
                         <input type="text" required>
@@ -103,7 +155,7 @@
                         <label>Username</label>
                     </div>
 
-                    <!--password input field-->
+                   
                     <div class="group" style="width:100%;display:inline-block;margin-top:5px;">
                         <input type="password" required>
                         <span class="highlight"></span>
@@ -112,10 +164,12 @@
                     </div>
 
 
-                    <!--login button-->
+                    
                      <input id="login1" class="btn" type="submit" value="submit1">
                       <input id="login1" class="btn" type="reset" value="reset1">
                 </div>
+    -->
+                
 
                 <div id="admin" class="tabcontent">
                     <div class="group" style="width:100%;display:inline-block;margin-top:100px;">
