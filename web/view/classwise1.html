@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Classwise </title>
+<style type="text/css">
+body{
+
+    
+  
+  background-image: url('style/resource/ma.jpg');
+  background-size:cover;
+   display:block;
+   
+  
+  
+}
+
+#bgcolor{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(54,54,54,0.65);
+}
+#button1{
+     transition: 0.5s;
+ z-index: 300;
+  padding: 5px;
+   color: #000000;
+    background: rgb(242,242,242);
+  /* for IE */
+display: inline-block;
+  width:150px;
+  position: relative;
+  top:10px;
+  margin-left: 30%;
+  border-radius: 10px     0      0           10px;
+   opacity: .5;
+   text-align: center;
+   
+   font-weight: normal;
+   text-shadow: 0.3px 0.3px;
+   font-family:"Comic Sans MS", cursive, sans-serif;
+  
+}
+
+#button2{
+  transition: 0.5s;
+  padding: 5px;
+  /* for IE */
+  background: rgb(128,128,128);
+  color: #ffffff; 
+  display: inline-block;
+  width:150px;
+  position: relative;
+  top:10px;
+  
+  border-radius: 0     10px      10px           0;
+   opacity: .8;
+   text-align: center;
+   
+   font-weight: normal;
+   text-shadow: 0.3px 0.3px;
+   font-family:"Comic Sans MS", cursive, sans-serif;
+  
+}
+
+#contents{
+
+  padding: 5px;
+  background: rgba(250,250,250,1); /* for IE */
+  
+
+  position:absolute;
+  width:94%;
+  height:70%;
+  margin-left: 0;
+  margin-top: 5%;
+   transition: 0.5s;
+  overflow-x: hidden;
+  border-radius: 10px     10px      10px           10px;
+   opacity: .2;
+}
+
+#fill{
+    z-index: 500;
+}
+
+#CLASSWISE{
+z-index: 300;
+  padding: 5px;
+  background: rgb(255,255,255); /* for IE */
+   transition: 0.5s;
+  width:88%;
+  height:35%;
+  position:absolute;
+  margin-top: 12%;
+  margin-left: 5%;
+  box-shadow:0px 3px 55px 4px black;
+  border-radius: 10px     10px      10px           10px;
+   opacity: 0.85;
+   text-align: center;
+   color: #000000; 
+   font-weight: normal;
+   text-shadow: 0.3px 0.3px;
+   font-family:"Comic Sans MS", cursive, sans-serif;
+}
+#go {
+    background-color: #4CAF50;
+    box-shadow:0px 1px 10px 2px black;
+    border-radius: 10px     10px      10px           10px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#usn{
+    width: 400px;
+    box-shadow:0px 1px 10px 1px black;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-bottom: 10px;
+    outline: none;
+}
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#toogle{
+    position:absolute;
+  top:15px;
+  left:50px;
+}
+
+
+
+
+#branch{
+    width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#year{
+width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+#about{
+    margin-top: 10%;
+    margin-left: 10%;
+    width:88%;
+  height:auto;
+    z-index: 
+  400;
+    color: white;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+   
+<script type="text/javascript">
+    
+    
+         $(document).ready(function () {
+    setTimeout(function(){
+       closeNav().fadeIn(100);
+    }, 100);
+});
+
+$(function() {
+    $('#button1').on('click', function(e) {
+        e.preventDefault();
+        $('#about').hide();
+        $('#home').show();
+        commit();
+    });
+});
+
+$(function() {
+    $('#button2').on('click', function(e) {
+        e.preventDefault();
+        $('#home').hide();
+        $('#about').show();
+        commit();
+    });
+});
+ jQuery(function(){
+       jQuery('#button1').click();
+    });
+function changebutton(id){
+	var x=document.getElementById(id).style;
+	var y;
+	if(id=="button1"){
+		//alert("btn1");
+               x.backgroundColor = "rgb(201, 201, 201)";
+           x.color = "black";
+	   document.getElementById("button2").style.backgroundColor = "rgb(66, 66, 66)";
+           document.getElementById("button2").style.color = "white";
+                //document.getElementById("about").style.display = "hidden";
+                
+		
+	}
+	else{
+           // alert("btn2");
+           x.backgroundColor = "rgb(201, 201, 201)";
+           x.color = "black";
+	   document.getElementById("button1").style.backgroundColor = "rgb(66, 66, 66)";
+           document.getElementById("button1").style.color = "white";
+		 //document.getElementById("home").style.display = "hidden";
+                //document.getElementById("about").style.display = "";
+            
+		}
+		
+	
+		
+	
+	
+	
+	return true;
+	
+}
+</script>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("toogle").innerHTML = "";
+    document.getElementById("button1").style.marginLeft = "35%";
+    document.getElementById("contents").style.marginLeft = "3%";
+    document.getElementById("contents").style.width = "75%";
+    
+    document.getElementById("CLASSWISE").style.width = "70%";
+    document.getElementById("about").style.width = "80%";
+    
+    
+}
+
+function closeNav() {
+    document.getElementById("button1").style.marginLeft = "40%";
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.getElementById("toogle").innerHTML = "&#9776;";
+    document.getElementById("contents").style.width = "94%";
+    document.getElementById("contents").style.marginLeft = "2%";
+    
+    document.getElementById("CLASSWISE").style.width = "88%";
+    document.getElementById("about").style.width = "88%";
+    
+}
+function changebackground()
+{var d=new Date();
+ var n= d.getHours();
+//document.write("valuue of n ",n);
+if(n>12){
+    document.body.style.backgroundImage = "url('style/resource/ma.jpg')";
+        }
+        else
+            document.body.style.backgroundImage = "url('style/resource/new.jpg')";
+        }
+</script>
+</head>
+<body  onload="changebackground()">
+    
+ <div id="bgcolor">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times</a>
+                <a href="http://localhost:8084/Result-analysis/view/main1.html">Home</a>
+               <a href="http://localhost:8084/Result-analysis/view/classwise1.html">Classwise Result</a>
+                <a href="http://localhost:8084/Result-analysis/view/department.html">Department Result</a>
+                <a href="http://localhost:8084/Result-analysis/view/analysis.jsp">Department analysis</a>
+                <a href="#">Contact US</a>
+            </div>
+
+
+            
+            <div id="main">
+                
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()" id="toogle"></span>
+   
+                <div id="button1" onclick="changebutton(this.id);">
+                   Recent
+                </div>
+                <div id="button2" onclick="changebutton(this.id);">
+                   About
+                </div>
+                
+                 <div id="contents">
+                    
+                     
+                   
+               </div>
+               
+                <div id="about">
+                    <p>Sri Jayachamarajendra College Of Engineering, conceived in 1963, is the dream child of Jagadguru Dr. Sri Shivarathri Rajendra Mahaswamigalavaru, the 23rd pontiff of Sri Suttur Mutt.
+                        It comes under the aegis of JSS Mahavidyapeetha, which is the primary institution of many such institutions. The college was officially inauguarated by 
+                        the esteemed founder of Manipal Institutes, Dr. T.M.A.Pai, the then chairman of the academy of education, Manipal, Mysore State.</p><br>
+                </div>
+                  <div id="home" >
+               <form action="/Result-analysis/Result" method="post">
+               <input type="hidden" name="identify" value="class">
+                <div id="CLASSWISE"><h1>
+                Enter your CLASS</h1>
+               
+                 
+    <select id="branch" name="branch">
+      <option value="cs">Computer Science</option>
+      <option value="ec">Electronics</option>
+      <option value="ee">Electricals</option>
+       <option value="is">Information Science</option>
+        <option value="it">Instrumentation Tech.</option>
+    </select>
+     <select id="year" name="year">
+      <option value="1">First</option>
+      <option value="2">Second</option>
+      <option value="3">Third</option>
+       <option value="4">Fourth</option>
+    </select>
+    <br>
+                 <input type="submit" id="go" value="GO">
+               </div>
+               
+               </form>
+               </div>
+            </div>
+       
+         </div>
+</body>
+</html>
